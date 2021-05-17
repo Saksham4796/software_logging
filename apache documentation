@@ -1,8 +1,0 @@
-Step1 : sudo apt-get update
-Step2 : sudo apt-get install apache2
-Step3 : sudo apt-get install net-tools
-Step4 : netstat -a | more
-Step5 : netstat -an | more
-Step6 : sudo /etc/init.d/apache2 stop
-Stop7 : sudo /etc/init.d/apache2 start
-Stop8 : ab -c 20 -n 1000 http://localhost/
