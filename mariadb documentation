@@ -1,0 +1,16 @@
+Step1 : sudo apt-get install mariadb-server mariadb-client
+Step2 : sudo systemctl stop mariadb.service
+Step3 : sudo systemctl start mariadb.service
+Step4 : sudo systemctl enable mariadb.service
+Step5 : sudo apt-get install curl
+Step6 : curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.deb.sh | sudo bash
+Step7 : sudo apt -y install sysbench
+Step8 : sudo mysql_secure_installation
+Step9 : set some password for 'root'
+Step10 : sudo mysql -u root -p
+Step11 : UPDATE mysql.user SET plugin = 'mysql_native_password' WHERE user = 'root' AND plugin = 'unix_socket';
+Step12 : \q
+Step13 : mysql -u root -p
+Step14 : CREATE DATABASE sbt
+
+Now follow the instructions as given on https://github.com/Percona-Lab/sysbench-tpcc .
