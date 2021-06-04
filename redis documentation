@@ -1,8 +1,0 @@
-Step1 : Download redis from https://redis.io/download
-Step2 : tar xvzf redis-6.2.3.tar.gz
-Step3 : cd redis-6.2.3
-Step4 : make
-
-Now to find redis benchmarks:
-Refer to the webpage : https://www.tutorialspoint.com/redis/redis_benchmarks.htm
-
