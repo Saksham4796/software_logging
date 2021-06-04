@@ -1,0 +1,41 @@
+Webpage:https://redis.io/
+
+Step1 : Download redis from https://redis.io/download
+Step2 : tar xvzf redis-6.2.3.tar.gz
+Step3 : cd redis-6.2.3
+Step4 : make
+
+Now to find redis benchmarks:
+Refer to the webpage : https://www.tutorialspoint.com/redis/redis_benchmarks.htm
+
+To run Redis with the default configuration, just type:
+
+Step1:   cd src
+Step2:   ./redis-server
+
+If you want to provide your redis.conf, you have to run it using an additional parameter (the path of the configuration file):
+
+STep1: cd src
+Step2: ./redis-server /path/to/redis.conf
+
+It is possible to alter the Redis configuration by passing parameters directly as options using the command line. 
+
+Step1: ./redis-server --port 9999 --replicaof 127.0.0.1 6379
+Step2: ./redis-server /etc/redis/6379.conf --loglevel debug
+
+To get the output for no-verbose logging , the following command can be executed:
+Step1: Run this command in one terminal - src/redis-server redis.conf --loglevel notice > notice.log 2>&1
+Step2: Run this command in a new terminal - src/redis-benchmark -q -n 100
+Step3: Stop the first terminal using Ctrl+C
+
+Now to get the output for verbose logging , the following command can be executed:
+Step1: Run this command in one terminal - src/redis-server redis.conf --loglevel verbose > verbose.log 2>&1
+Step2: Run this command in a new terminal - src/redis-benchmark -q -n 100
+Step3: Stop the first terminal using Ctrl+C
+
+Now, we can compare the notice.log and verbose.log files to observe the difference between loglevel notice and loglevel verbose.
+
+Few Points:
+1. The following command was used to find out if redis was intsalled using apt-get package manager - "dpkg -l | grep redis" . The "ii" in the beginning of the output shows that the library was pre-installed using apt-get package manager.
+2. The following command was used to stop the redis which was pre-installed using apt-get package manager - "sudo systemctl stop redis"
+3. The following command was used to disable the redis which was pre-installed using apt-get package manager - "sudo systemctl disable redis"
