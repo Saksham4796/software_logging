@@ -1,0 +1,18 @@
+Webpage:https://httpd.apache.org/
+
+Step1 : sudo apt-get update
+Step2 : sudo apt-get install apache2
+Step3 : sudo apt-get install net-tools
+Step4 : netstat -a | more
+Step5 : netstat -an | more
+Step6 : sudo /etc/init.d/apache2 stop
+Step7 : sudo /etc/init.d/apache2 start
+Step8 : ab -c 20 -n 1000 http://localhost/
+
+For verbose logging the following command can be executed:
+ab -c 20 -n 1000 -e "benchmark1.csv" -v 2  http://localhost/
+
+More information about ab tool can be found at the following website: https://httpd.apache.org/docs/2.4/programs/ab.html
+
+
+For changing the Listen configuration we can refer to the following website : https://httpd.apache.org/docs/2.4/bind.html
