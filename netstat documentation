@@ -1,0 +1,7 @@
+Some important points:
+1. The following command can be used to find out all the active internet connections - sudo netstat -tulpn
+2. The following commands can be used to grep a process using the name - ps -ef | grep redis or ps aux | grep 'redis' (Here the name of the process is redis)
+3. The fllowing command can be used to kill a process using it's name - kill $(ps aux | grep 'redis' | awk '{print $2}') (Here the name of the process is 'redis')
+4. The following command can be used to find the pid of the process which is listening to the given port - sudo netstat -tulpn | grep ':PORT' , where PORT in the port which is to be provided by us.
+5. If we want to find out which process is listening to a particular port the following command can be executed : "sudo netstat -peanut | grep PORT" , where PORT is the port number for which  we want to find the process.
+6. The following cammand can be used to kill a process using the pid : "sudo kill -9 PID" , where PID is the pid which is to be provided.
